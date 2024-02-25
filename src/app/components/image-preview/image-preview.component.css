@@ -1,0 +1,10 @@
+.image-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa; /* Slightly off-white to distinguish from the app background */
+}
+
+.image-preview p {
+  color: #aaa; /* Placeholder text color */
+}

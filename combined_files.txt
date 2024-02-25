@@ -1,0 +1,141 @@
+===== src/app/components/manipulate-pane/manipulate-pane.component.html =====
+<!-- manipulate-pane.component.html -->
+<div class="manipulate-pane">
+  <h2>Manipulate</h2>
+  <mat-slider thumbLabel tickInterval="1" min="0" max="100" value="50" label="Brightness"></mat-slider>
+  <mat-slider thumbLabel tickInterval="1" min="0" max="100" value="50" label="Contrast"></mat-slider>
+  <mat-slider thumbLabel tickInterval="1" min="0" max="100" value="50" label="Temperature"></mat-slider>
+</div>
+===== src/app/components/manipulate-pane/manipulate-pane.component.ts =====
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-manipulate-pane',
+  templateUrl: './manipulate-pane.component.html',
+  styleUrls: ['./manipulate-pane.component.css']
+})
+export class ManipulatePaneComponent {
+
+}
+===== src/app/components/manipulate-pane/manipulate-pane.component.css =====
+.manipulate-pane h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+mat-slider {
+  width: 100%; /* Ensure sliders use the full width */
+  margin-bottom: 20px;
+}
+===== src/app/components/image-preview/image-preview.component.ts =====
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-image-preview',
+  templateUrl: './image-preview.component.html',
+  styleUrls: ['./image-preview.component.css']
+})
+export class ImagePreviewComponent {
+
+}
+===== src/app/components/image-preview/image-preview.component.html =====
+<!-- image-preview.component.html -->
+<div class="image-preview">
+  <!-- Image preview content goes here -->
+  <p>Image Preview</p>
+  <!-- Assuming an <img> tag will eventually go here -->
+</div>
+
+===== src/app/components/image-preview/image-preview.component.css =====
+.image-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa; /* Slightly off-white to distinguish from the app background */
+}
+
+.image-preview p {
+  color: #aaa; /* Placeholder text color */
+}
+===== src/app/components/image-carousel/image-carousel.component.css =====
+===== src/app/components/image-carousel/image-carousel.component.html =====
+<!-- image-carousel.component.html -->
+<div class="image-carousel">
+  Image Carousel
+  <!-- Carousel content will go here -->
+</div>
+
+===== src/app/components/image-carousel/image-carousel.component.ts =====
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-image-carousel',
+  templateUrl: './image-carousel.component.html',
+  styleUrls: ['./image-carousel.component.css']
+})
+export class ImageCarouselComponent {
+
+}
+===== src/app/components/app-bar/app-bar.component.ts =====
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-app-bar',
+  templateUrl: './app-bar.component.html',
+  styleUrls: ['./app-bar.component.css']
+})
+export class AppBarComponent {
+
+}
+===== src/app/components/app-bar/app-bar.component.css =====
+===== src/app/components/app-bar/app-bar.component.html =====
+<!-- app-bar.component.html -->
+<mat-toolbar color="primary">
+  Leading Edge Photo Editor
+</mat-toolbar>
+===== src/styles.css =====
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 250px 1fr;
+  height: 100vh;
+}
+
+.manipulate-pane {
+  grid-row: 1 / span 2;
+  grid-column: 1;
+  background-color: #f0f0f0;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  z-index: 2;
+  padding: 20px;
+}
+
+.image-preview {
+  grid-row: 1;
+  grid-column: 2;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-carousel {
+  grid-row: 3;
+  grid-column: 1 / -1;
+  background-color: #e0e0e0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-bar {
+  grid-column: 1 / -1;
+  z-index: 3;
+}

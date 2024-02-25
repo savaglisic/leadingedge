@@ -1,4 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.app-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* auto for the header, 1fr for the main content, auto for the footer */
+  grid-template-columns: 250px 1fr; /* 250px for the sidebar, 1fr for the main content */
+  height: 100vh;
+}
+
+.manipulate-pane {
+  grid-row: 2; /* Starts from the second row, beneath the app bar */
+  grid-column: 1;
+  background-color: #f0f0f0;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.image-preview {
+  grid-row: 2; /* Occupies the same row as the manipulate pane */
+  grid-column: 2; /* Takes up the second column */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-carousel {
+  grid-row: 3; /* Positioned at the third row, at the bottom */
+  grid-column: 1 / -1; /* Spans across both columns */
+  background-color: #e0e0e0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-bar {
+  grid-row: 1; /* Ensures the app bar is at the top */
+  grid-column: 1 / -1; /* Spans across both columns */
+  z-index: 3;
+}
